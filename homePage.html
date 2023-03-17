@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohan Penumarthi</title>
+    <link rel="icon" href="./assets/Images/logobg.png">
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+   
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 150)
+        })
+
+        $(function () {
+            
+            emailjs.init('QnGL4MN5KYbbsdghh')
+
+            $("#sendbtn").click(() => {
+                var flag = true;
+                var name = $("#name").val()
+                var sub = $("#sub").val()
+                var message = $("#message").val()
+
+                if (name == "" || sub == "" || message == "") {
+                    $('#validation').text('Please fill all the feilds given above').css({ 'color': 'red' })
+                    flag = false;
+                }
+
+                if (flag) {
+                    $('#validation').text('')
+                    var params = {
+                        sub : sub,
+                        from_name : name,
+                        message : message
+                    }
+
+                    emailjs.send("service_cd06dnd","template_51vexsr", params).then(function(res){
+                        alert("Thankyou for connecting me! I will get back to you soon")
+                        $("#name").val("")
+                        $("#sub").val("")
+                        $("#message").val("")
+                    });
+                }
+            })
+            $('#em').hover(
+            function() {
+                $('#proj2').css({'opacity': 1, 'transition': '.5s'});
+
+            },
+            function() {
+                $('#proj2').css('opacity', 0);
+            }
+        );
+        $('#qutiproj').hover(
+            function() {
+                $('#proj1').css({'opacity': 1, 'transition': '.5s'});
+                // $('#qutiproj').css('transform', 'scale(1.1)')
+            },
+            function() {
+                $('#proj1').css('opacity', 0);
+                // $('#qutiproj').css('transform', 'scale(1)')
+            }
+        );
+        $('#fg').hover(
+            function() {
+                $('#proj3').css({'opacity': 1, 'transition': '.5s'});
+            },
+            function() {
+                $('#proj3').css('opacity', 0);
+            }
+        );
+        $('#emppre').hover(
+            function() {
+                $('#proj4').css({'opacity': 1, 'transition': '.5s'});
+            },
+            function() {
+                $('#proj4').css('opacity', 0);
+            }
+        );
+        $('#medpre').hover(
+            function() {
+                $('#proj5').css({'opacity': 1, 'transition': '.5s'});
+            },
+            function() {
+                $('#proj5').css('opacity', 0);
+            }
+        );
+        $('#projx').hover(
+            function() {
+                $('#proj6').css({'opacity': 1, 'transition': '.5s'});
+            },
+            function() {
+                $('#proj6').css('opacity', 0);
+            }
+        );
+        })
+    </script>
+
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="400">
+
+    <header>
+        <div class="navbar navbar-expand-lg p-3" id="navBar">
+            <div class="container-fluid">
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menulst">
+                    <span class="bi navbar-toggler-icon"></span>
+                </button>
+                <a href="#" class="navbar-brand ms-3 me-5">M | P</a>
+                <div class="collapse navbar-collapse" id="menulst">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link me-5">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link me-5">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link me-5">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projects" class="nav-link me-5">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#experience" class="nav-link me-5">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link  me-3">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="home">
+        <div style="background-color: rgb(230, 230, 230);" class="container-fluid p-3">
+
+            <div class="row p-3 my-5">
+                <div class="col-lg-7 p-3 text-center" style="margin-top: 70px;">
+                    <h3 class="subhead mb-4">Hi! This is </h3>
+                    <h1 class="namestyle">Mohana Uma Sushmanth Penumarthi</h1>
+                    <h3 class="subhead">Full stack web developer</h3>
+                    <a href="./assets/Images/Resume.pdf" target="_blank"><button class="margb btn btn-secondary">Resume</button></a>
+                </div>
+                <div class="col-lg-5" id="hello">
+                    <img src="./assets/Images/hello-world.gif" alt="Image loading Error" 
+                    class="w-100 mt-5 rounded-3" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div style="background-color: whitesmoke;" class="container-fluid p-3">
+
+            <div class="text-center my-3">
+                <h1>About Me</h1>
+            </div>
+    
+            <div class="d-flex justify-content-center p-3 mb-5">
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="d-flex justify-content-center p-3">
+                            <img src="./assets/Images/pic.jpeg" alt="Image Not Found" class=" w-75 rounded-2" 
+                            style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.3);">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3">
+                            <p class="mt-2">My name is Mohana uma sushmanth Penumarthi and I am from India.
+                                I am a graduate student at Illinois institute of technology, Chicago, 
+                                currently pursuing master's in Computer Science.
+                                I have done my under graduation (B.tech) in Computer Science major
+                                 from BML Munjal University, India (2018 - 2022 Batch). <br>
+                                I am a self-motivated and hardworking fresher with high energy and good 
+                                communication skills. I am aiming to build my career in IT industry, where
+                                I can get the opportunities to prove my abilities by accepting challenges,
+                                fulfilling the goals, and climbing the career ladder through continuous 
+                                learning and commitment. I am skilled in Java, Python, and other web technologies
+                                like HTML, CSS, Bootstrap, Javascript, ReactJS, NodeJS, and ExpressJS.
+                                Currently, I am working on Full stack web development.
+                                I am looking for new opportunities and challenges to expand my skills and knowledge and 
+                                I would love to hear from you if you have any openings or projects that you think
+                                would be a good fit for me.
+                            </p>
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div style="background-color: rgb(230, 230, 230);">
+            <div class="container-fluid p-3">
+                <h1 class="text-center mt-3">Skills</h1>
+                <div class="container-fluid mt-4">
+                    <div class="d-flex row">
+                        <div class="d-flex col-lg-3 justify-content-center">
+                            <div class="border border-2 rounded m-4 p-3 w-100" id="card">
+                                <div class="d-flex justify-content-center">
+                                    <img src="./assets/Images/java.jpeg" alt="Image not foung" height="180px" width="200px">
+                                </div>
+                                <h5 class="text-center mt-4">Java</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex col-lg-3 justify-content-center">
+                            <div class="border border-2 rounded m-4 p-3 w-100" id="card">
+                                <div class="d-flex justify-content-center">
+                                    <img src="./assets/Images/js.png" alt="Image not foung" height="200px" width="200px">
+                                </div>
+                                <h5 class="text-center mt-4">JavaScript</h5>
+                            </div>
+                        </div> 
+        
+                        <div class="d-flex col-lg-3 justify-content-center">
+                            <div class="border border-2 rounded m-4 p-3 w-100" id="card">
+                                <div class="d-flex justify-content-center">
+                                    <img src="./assets/Images/bs.svg" alt="Image not foung" height="200px" width="200px">
+                                </div>
+                                <h5 class="text-center mt-4">Bootstrap</h5>
+                            </div>
+                        </div>
+        
+                        <div class="d-flex col-lg-3 justify-content-center">
+                            <div class="border border-2 rounded m-4 p-3 w-100" id="card">
+                                <div class="d-flex justify-content-center">
+                                    <img src="./assets/Images/React.webp" alt="Image not foung" height="200px" width="200px">
+                                </div>
+                                <h5 class="text-center mt-4">ReactJS</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex row">
+                        
+                        <div class="d-flex col-lg-3 justify-content-center">
+                            <div class="border border-2 rounded m-4 p-3 w-100" id="card">
+                                <div class="d-flex justify-content-center">
+                                    <img src="./assets/Images/nodejs.png" alt="Image not foung" height="200px" width="180px">
+                                </div>
+                                <h5 class="text-center mt-4">NodeJS</h5>
+                            </div>
+                        </div>
+                       
+                       
+                        <div class="d-flex col-lg-3 justify-content-center">
+                            <div class="border border-2 rounded m-4 p-3 w-100" id="card">
+                                <div class="d-flex justify-content-center">
+                                    <img src="./assets/Images/exp.png" alt="Image not foung" height="200px" width="180px">
+                                </div>
+                                <h5 class="text-center mt-4">ExpressJS</h5>
+                            </div>
+                        </div>
+        
+        
+                        <div class="d-flex col-lg-3 justify-content-center">
+                            <div class="border border-2 rounded m-4 p-3 w-100" id="card">
+                                <div class="d-flex justify-content-center">
+                                    <img src="./assets/Images/mysql.svg" alt="Image not foung" height="200px" width="200px">
+                                </div>
+                                <h5 class="text-center mt-4">MySQL</h5>
+                            </div>
+                        </div>
+        
+        
+                        <div class="d-flex col-lg-3 justify-content-center">
+                            <div class="border border-2 rounded m-4 p-3 w-100" id="card">
+                                <div class="d-flex justify-content-center">
+                                    <img src="./assets/Images/mongodb.png" alt="Image not foung" height="200px" width="200px">
+                                </div>
+                                <h5 class="text-center mt-4">MongoDB</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div style="background-color: whitesmoke;" class="container-fluid p-3">
+            <div class="text-center mt-3">
+                <h1>Projects</h1>
+            </div>
+    
+            <div class="row mt-3">
+                <div class="col-lg-4 my-3">
+                    <div class="text-center rounded-3" id="qutiproj">
+                        <div id="proj1" class="project w-100 h-100 p-4 rounded-3 text-white">
+                            <div class="mt-5">
+                                <h3>Quantifying the text similarity between citations using NLP</h3>
+                                <div class="d-flex justify-content-center mt-2 p-5">
+                                    <a href="https://github.com/PenumarthiSushmanth/Quantifying-the-text-similarity-between-citations-using-NLP" 
+                                    target="_blank"><button class="btn btn-primary">View Project</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 my-3">
+                    <div class="text-center rounded-3" id="em">
+                        <div id="proj2" class="project w-100 h-100 p-4 rounded-3 text-white">
+                            <div class="mt-5">
+                                <h3>EatMore</h3>
+                                <div class="d-flex justify-content-center mt-5 p-5">
+                                    <a href="https://github.com/PenumarthiSushmanth/EatMore" target="_blank"><button class="btn btn-primary">View Project</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                
+                <div class="col-lg-4 my-3">
+                    <div class="text-center rounded-3" id="fg">
+                        <div id="proj3" class="project w-100 h-100 p-4 rounded-3 text-white">
+                            <div class="mt-5">
+                                <h3>FarmlyGO</h3>
+                                <div class="d-flex justify-content-center mt-5 p-5">
+                                    <a href="https://github.com/PenumarthiSushmanth/Farmly-GO" target="_blank"><button class="btn btn-primary">View Project</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="row mt-3">
+                
+                <div class="col-lg-4 my-3">
+                    <div class="text-center rounded-3" id="emppre">
+                        <div id="proj4" class="project w-100 h-100 p-4 rounded-3 text-white">
+                            <div class="mt-5">
+                                <h3>Employee Promotion Prediction</h3>
+                                <div class="d-flex justify-content-center mt-2 p-5">
+                                    <a href="https://github.com/PenumarthiSushmanth/Employee-promotion-prediction" 
+                                    target="_blank"><button class="btn btn-primary">View Project</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 my-3">
+                    <div class="text-center rounded-3" id="medpre">
+                        <div id="proj5" class="project w-100 h-100 p-4 rounded-3 text-white">
+                            <div class="mt-5">
+                                <h3>Medical Durg Prediction</h3>
+                                <div class="d-flex justify-content-center mt-5 p-5">
+                                    <a href="https://github.com/PenumarthiSushmanth/Medical-Drug-Prediction" target="_blank"><button class="btn btn-primary">View Project</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                
+                <div class="col-lg-4 my-3">
+                    <div class="text-center rounded-3" id="projx">
+                        <div id="proj6" class="project w-100 h-100 p-4 rounded-3 text-white">
+                            <div class="mt-5">
+                                <h3>Domain Asset Finder</h3>
+                                <div class="d-flex justify-content-center mt-5 p-5">
+                                    <a href="https://github.com/PenumarthiSushmanth/Domain-asset-finder" target="_blank"><button class="btn btn-primary">View Project</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>    
+        </div>
+    </section>
+    <section id="experience">
+        <div style="background-color: rgb(230, 230, 230);" class="container-fluid p-3">
+
+            <div class="text-center mt-3">
+                <h1>Experience</h1>
+            </div>
+    
+            <div class="row d-flex p-3 mt-5 rounded-3" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);">
+                <div class="col-lg-3 p-3">
+                    <img src="./assets/Images/sew.png" alt="Img Loading error" class="w-100 rounded-2" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);">
+                </div>
+                <div class="col-lg-9 mt-lg-4">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <h4>Product Engineer Trainee</h4>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>Jan 2022 - Jun 2022</p>
+                        </div>
+                    </div>
+                    <div class="row mt-lg-3">
+                        <div>
+                            <ul>
+                                <li>Worked as a Dot NET developer in the Payments team for SCM product in product engineering department.</li>
+                                <li>Designed the payment module which is used by the end customers to make payments to Utility based companies in the US.</li>
+                                <li><b>Skills: </b>ASP. Net, C#, MySQL, SQL Sever Management Studio (SSMS), Postman tool, Visual Studio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="row d-flex p-3 my-5 rounded-3" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);">
+                
+                <div class="col-lg-3 p-3">
+                    <img src="./assets/Images/sv.png" alt="Img Loading error" class="w-100 rounded-2" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);">
+                </div>
+                
+                <div class="col-lg-9 mt-lg-4">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <h4>Data Science Trainee (Internship)</h4>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>Jun 2022 - Aug 2022</p>
+                        </div>
+                    </div>
+                    <div class="row mt-lg-3">
+                        <div>
+                            <ul>
+                                <li>Developed a Machine learning classification model that predicts the promotion of the employees in a large MNC.</li>
+                                <li>Analysed and trained the data with three classification algorithms KNN, Decision tree, and logistic regression.</li>
+                                <li><b>Skills: </b>Python, Data cleaning and analysis, Data visualization, Machine learning, Jupyter Notebook</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+
+        <div style="background-color: whitesmoke;" class="container-fluid p-3">
+            <div class="text-center mt-3">
+                <h1>Contact Me</h1>
+            </div>
+            <div class="mt-4">
+                <div class="row">
+                    <div class="col-lg-5 my-3">
+                        <div class="p-4 border rounded" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.2);">
+                            <div class="mx-3">
+                                <div class="d-flex justify-content-center my-3">
+                                    <img src="./assets/Images/contact.jpeg" alt="Image Not found" class="border rounded-2 w-100">
+                                </div>
+                                <h3>Mohana uma sushmanth Penumarthi</h3>
+                                
+                                <div class="my-4">
+                                    <p><span class="bi bi-telephone-fill"> </span>+1 312-479-5956</p>
+                                    <p><span class="bi bi-envelope-fill"> </span>penumarthi.sushmanth@gmail.com</p>
+                                    <p><span class="bi bi-geo-alt-fill"> </span>Chicago, Illinois, PIN: 60616</p>
+                                </div>
+                                
+                                <div class="mt-5 d-flex justify-content-between">
+                                    <a class="btn text-white" style="background-color: #0082ca;" target="_blank"
+                                        href="https://www.linkedin.com/in/penumarthi-sushmanth/">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                    <a class="btn text-white" style="background-color: #333333;" target="_blank"
+                                        href="https://github.com/PenumarthiSushmanth">
+                                        <i class="bi bi-github"></i>
+                                    </a>
+                                    <a class="btn text-white" style="background-color: #55acee;" target="_blank"
+                                        href="https://twitter.com/FatherOfDrago15">
+                                        <i class="bi bi-twitter"></i>
+                                    </a>
+                                    <a class="btn text-white" style="background-color: #E1306C;" target="_blank"
+                                        href="https://www.instagram.com/_mr.mohanist_/">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 my-3">
+                        <div class="p-4 border rounded" style="box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.2);">
+                            <h2 class="text-center mb-4">Get in touch</h2>
+                            <h5 class="mb-3">Name: </h5>
+                            <input type="text" id="name" class="form-control bg-light mb-3" placeholder="Enter your name">
+                            <h5 class="mb-3">Subject: </h5>
+                            <input type="text" id="sub" class="form-control bg-light mb-3" placeholder="Enter your Subject">
+                            <h5 class="mb-3">Message: </h5>
+                            <textarea id="message" cols="10" rows="5" class="form-control bg-light mb-3"
+                                placeholder="Write your message here..."></textarea>
+                            <p id="validation" class="text-center"></p>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-success" id="sendbtn"><span class="bi bi-send"> </span>Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#home" id="gototop"><button class="btn btn-danger border rounded rounded-pill p-4"><span class="bi bi-chevron-double-up"></span></button></a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
