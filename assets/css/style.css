@@ -17,12 +17,12 @@ header.sticky {
     font-weight: bold;
 }
 .subhead{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 60px;
+    margin-bottom: 70px;
     color: gray;
 }
 #hello{
-    margin-top: 70px;
+    margin-top: 100px;
 }
 .margb{
     margin-bottom: 180px;
