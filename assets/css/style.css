@@ -1,0 +1,101 @@
+body{
+    font-family: Georgia, serif;
+}
+header{
+    background-color: rgba(230, 230, 230);
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+}
+header.sticky {
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.3);
+    position: fixed;
+}
+.namestyle{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+.subhead{
+    margin-top: 65px;
+    margin-bottom: 65px;
+    color: gray;
+}
+#hello{
+    margin-top: 100px;
+}
+.margb{
+    margin-bottom: 180px;
+}
+@media only screen and (max-width: 900px) {
+    #hello {
+        display: none;
+    }
+    .margb{
+    margin-bottom: 100px;
+}
+}
+#card{
+    background-color: white;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+#gototop{
+    text-decoration: none;
+    color: white;
+}
+#em{
+    background-image: url('../Images/eatmore.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 300px;
+    width: 100%;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+#qutiproj{
+    background-image: url('../Images/qts.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 300px;
+    width: 100%;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+#fg{
+    background-image: url('../Images/fg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 300px;
+    width: 100%;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+#emppre{
+    background-image: url('../Images/emp.avif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 300px;
+    width: 100%;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+#medpre{
+    background-image: url('../Images/med.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 300px;
+    width: 100%;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+#projx{
+    background-image: url('../Images/px.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 300px;
+    width: 100%;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+}
+
+.project{
+    background-color: rgba(0, 0, 0, .6);
+    opacity: 0;
+}
